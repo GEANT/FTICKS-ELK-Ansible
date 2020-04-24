@@ -1,0 +1,29 @@
+{
+  "metadata" : {},
+  "elasticsearch" : {
+    "cluster" : [],
+    "indices" : [
+      {
+        "names" : [
+          "fticks_edugain*"
+        ],
+        "privileges" : [
+          "read"
+        ],
+        "allow_restricted_indices" : false
+      }
+    ],
+    "run_as" : []
+  },
+  "kibana" : [
+    {
+      "base" : [
+        "read"
+      ],
+      "feature" : {},
+      "spaces" : [
+        "readonly"
+      ]
+    }
+  ],
+}

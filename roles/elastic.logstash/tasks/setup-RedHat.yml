@@ -1,0 +1,32 @@
+---
+- name: Add Elasticsearch GPG key.
+  become: yes
+  rpm_key:
+    key: https://artifacts.elastic.co/GPG-KEY-elasticsearch
+    state: present
+
+- name: Add Logstash repository.
+  become: yes
+  template:
+    src: logstash.repo.j2
+    dest: /etc/yum.repos.d/logstash.repo
+    mode: 0644
+
+- name: Install Logstash.
+  become: yes
+  package:
+    name: logstash
+    state: present
+
+- name: Add port forwarding from 1514 to 514
+  become: yes
+  lineinfile:
+    path: /etc/systemd/system/logstash.service
+    insertafter: '^ExecStart'
+    line: ExecStartPost=+/sbin/iptables -t nat -A PREROUTING -p UDP -m udp --dport 514 -j REDIRECT --to-ports 1514
+    regexp: '^ExecStartPost=+/sbin/iptables'
+    state: present
+  notify:
+  - restart logstash
+  - daemon reload
+

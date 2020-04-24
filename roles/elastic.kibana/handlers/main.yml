@@ -1,0 +1,9 @@
+---
+- name: restart kibana
+  become: yes
+  service: name=kibana state=restarted
+
+- name: restart nginx
+  become: yes
+  service: name=nginx state=restarted
+

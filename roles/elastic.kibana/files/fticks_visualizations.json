@@ -1,0 +1,234 @@
+[
+{
+   "attributes":{
+      "description":"",
+      "kibanaSavedObjectMeta":{
+         "searchSourceJSON":"{\n  \"query\": {\n    \"query\": \"\",\n    \"language\": \"kuery\"\n  },\n  \"filter\": [],\n  \"indexRefName\": \"kibanaSavedObjectMeta.searchSourceJSON.index\"\n}"
+      },
+      "title":"IDP_count_horizontal",
+      "uiStateJSON":"{}",
+      "version":1,
+      "visState":"{\n  \"title\": \"IDP_count_horizontal\",\n  \"type\": \"histogram\",\n  \"params\": {\n    \"type\": \"histogram\",\n    \"grid\": {\n      \"categoryLines\": false\n    },\n    \"categoryAxes\": [\n      {\n        \"id\": \"CategoryAxis-1\",\n        \"type\": \"category\",\n        \"position\": \"left\",\n        \"show\": true,\n        \"style\": {},\n        \"scale\": {\n          \"type\": \"linear\"\n        },\n        \"labels\": {\n          \"show\": true,\n          \"rotate\": 0,\n          \"filter\": false,\n          \"truncate\": 200\n        },\n        \"title\": {}\n      }\n    ],\n    \"valueAxes\": [\n      {\n        \"id\": \"ValueAxis-1\",\n        \"name\": \"LeftAxis-1\",\n        \"type\": \"value\",\n        \"position\": \"bottom\",\n        \"show\": true,\n        \"style\": {},\n        \"scale\": {\n          \"type\": \"linear\",\n          \"mode\": \"normal\"\n        },\n        \"labels\": {\n          \"show\": true,\n          \"rotate\": 75,\n          \"filter\": true,\n          \"truncate\": 100\n        },\n        \"title\": {\n          \"text\": \"Total logons\"\n        }\n      }\n    ],\n    \"seriesParams\": [\n      {\n        \"show\": true,\n        \"type\": \"histogram\",\n        \"mode\": \"normal\",\n        \"data\": {\n          \"label\": \"Total logons\",\n          \"id\": \"1\"\n        },\n        \"valueAxis\": \"ValueAxis-1\",\n        \"drawLinesBetweenPoints\": true,\n        \"showCircles\": true\n      },\n      {\n        \"show\": true,\n        \"mode\": \"normal\",\n        \"type\": \"histogram\",\n        \"drawLinesBetweenPoints\": true,\n        \"showCircles\": true,\n        \"data\": {\n          \"id\": \"2\",\n          \"label\": \"Unique users\"\n        },\n        \"valueAxis\": \"ValueAxis-1\"\n      }\n    ],\n    \"addTooltip\": true,\n    \"addLegend\": true,\n    \"legendPosition\": \"right\",\n    \"times\": [],\n    \"addTimeMarker\": false,\n    \"dimensions\": {\n      \"x\": null,\n      \"y\": [\n        {\n          \"accessor\": 0,\n          \"format\": {\n            \"id\": \"number\"\n          },\n          \"params\": {},\n          \"aggType\": \"count\"\n        }\n      ]\n    },\n    \"labels\": {\n      \"show\": false\n    }\n  },\n  \"aggs\": [\n    {\n      \"id\": \"1\",\n      \"enabled\": true,\n      \"type\": \"count\",\n      \"schema\": \"metric\",\n      \"params\": {\n        \"customLabel\": \"Total logons\"\n      }\n    },\n    {\n      \"id\": \"2\",\n      \"enabled\": true,\n      \"type\": \"cardinality\",\n      \"schema\": \"metric\",\n      \"params\": {\n        \"field\": \"PN.keyword\",\n        \"customLabel\": \"Unique users\"\n      }\n    },\n    {\n      \"id\": \"3\",\n      \"enabled\": true,\n      \"type\": \"terms\",\n      \"schema\": \"segment\",\n      \"params\": {\n        \"field\": \"AP_uri_domain.keyword\",\n        \"orderBy\": \"1\",\n        \"order\": \"desc\",\n        \"size\": 50,\n        \"otherBucket\": false,\n        \"otherBucketLabel\": \"Other\",\n        \"missingBucket\": false,\n        \"missingBucketLabel\": \"Missing\",\n        \"customLabel\": \"IdP\"\n      }\n    }\n  ]\n}"
+   },
+   "id":"00e02f60-c282-11e9-9645-2b2282eeab33",
+   "migrationVersion":{
+      "visualization":"7.4.2"
+   },
+   "references":[
+      {
+         "id":"f8876af0-5dcb-11ea-925f-8d97126eb154",
+         "name":"kibanaSavedObjectMeta.searchSourceJSON.index",
+         "type":"index-pattern"
+      }
+   ],
+   "type":"visualization",
+   "updated_at":"2020-03-04T03:58:21.213Z",
+   "version":"WzM5NSw2XQ=="
+}{
+   "attributes":{
+      "description":"",
+      "kibanaSavedObjectMeta":{
+         "searchSourceJSON":"{\n  \"query\": {\n    \"query\": \"\",\n    \"language\": \"kuery\"\n  },\n  \"filter\": [],\n  \"indexRefName\": \"kibanaSavedObjectMeta.searchSourceJSON.index\"\n}"
+      },
+      "title":"SP_count_horizontal",
+      "uiStateJSON":"{}",
+      "version":1,
+      "visState":"{\n  \"title\": \"SP_count_horizontal\",\n  \"type\": \"histogram\",\n  \"params\": {\n    \"type\": \"histogram\",\n    \"grid\": {\n      \"categoryLines\": false\n    },\n    \"categoryAxes\": [\n      {\n        \"id\": \"CategoryAxis-1\",\n        \"type\": \"category\",\n        \"position\": \"left\",\n        \"show\": true,\n        \"style\": {},\n        \"scale\": {\n          \"type\": \"linear\"\n        },\n        \"labels\": {\n          \"show\": true,\n          \"rotate\": 0,\n          \"filter\": false,\n          \"truncate\": 200\n        },\n        \"title\": {}\n      }\n    ],\n    \"valueAxes\": [\n      {\n        \"id\": \"ValueAxis-1\",\n        \"name\": \"LeftAxis-1\",\n        \"type\": \"value\",\n        \"position\": \"bottom\",\n        \"show\": true,\n        \"style\": {},\n        \"scale\": {\n          \"type\": \"linear\",\n          \"mode\": \"normal\"\n        },\n        \"labels\": {\n          \"show\": true,\n          \"rotate\": 75,\n          \"filter\": true,\n          \"truncate\": 100\n        },\n        \"title\": {\n          \"text\": \"Total logons\"\n        }\n      }\n    ],\n    \"seriesParams\": [\n      {\n        \"show\": true,\n        \"type\": \"histogram\",\n        \"mode\": \"normal\",\n        \"data\": {\n          \"label\": \"Total logons\",\n          \"id\": \"1\"\n        },\n        \"valueAxis\": \"ValueAxis-1\",\n        \"drawLinesBetweenPoints\": true,\n        \"showCircles\": true\n      },\n      {\n        \"show\": true,\n        \"mode\": \"normal\",\n        \"type\": \"histogram\",\n        \"drawLinesBetweenPoints\": true,\n        \"showCircles\": true,\n        \"data\": {\n          \"id\": \"2\",\n          \"label\": \"Unique users\"\n        },\n        \"valueAxis\": \"ValueAxis-1\"\n      }\n    ],\n    \"addTooltip\": true,\n    \"addLegend\": true,\n    \"legendPosition\": \"right\",\n    \"times\": [],\n    \"addTimeMarker\": false,\n    \"dimensions\": {\n      \"x\": null,\n      \"y\": [\n        {\n          \"accessor\": 0,\n          \"format\": {\n            \"id\": \"number\"\n          },\n          \"params\": {},\n          \"aggType\": \"count\"\n        }\n      ]\n    },\n    \"labels\": {\n      \"show\": false\n    }\n  },\n  \"aggs\": [\n    {\n      \"id\": \"1\",\n      \"enabled\": true,\n      \"type\": \"count\",\n      \"schema\": \"metric\",\n      \"params\": {\n        \"customLabel\": \"Total logons\"\n      }\n    },\n    {\n      \"id\": \"2\",\n      \"enabled\": true,\n      \"type\": \"cardinality\",\n      \"schema\": \"metric\",\n      \"params\": {\n        \"field\": \"PN.keyword\",\n        \"customLabel\": \"Unique users\"\n      }\n    },\n    {\n      \"id\": \"3\",\n      \"enabled\": true,\n      \"type\": \"terms\",\n      \"schema\": \"segment\",\n      \"params\": {\n        \"field\": \"RP_uri_domain.keyword\",\n        \"orderBy\": \"1\",\n        \"order\": \"desc\",\n        \"size\": 50,\n        \"otherBucket\": false,\n        \"otherBucketLabel\": \"Other\",\n        \"missingBucket\": false,\n        \"missingBucketLabel\": \"Missing\",\n        \"customLabel\": \"SP\"\n      }\n    }\n  ]\n}"
+   },
+   "id":"ac25db90-c282-11e9-9645-2b2282eeab33",
+   "migrationVersion":{
+      "visualization":"7.4.2"
+   },
+   "references":[
+      {
+         "id":"f8876af0-5dcb-11ea-925f-8d97126eb154",
+         "name":"kibanaSavedObjectMeta.searchSourceJSON.index",
+         "type":"index-pattern"
+      }
+   ],
+   "type":"visualization",
+   "updated_at":"2020-03-04T03:58:35.028Z",
+   "version":"WzM5Niw2XQ=="
+}{
+   "attributes":{
+      "description":"",
+      "kibanaSavedObjectMeta":{
+         "searchSourceJSON":"{\n  \"query\": {\n    \"query\": \"\",\n    \"language\": \"kuery\"\n  },\n  \"filter\": [],\n  \"indexRefName\": \"kibanaSavedObjectMeta.searchSourceJSON.index\"\n}"
+      },
+      "title":" IdP_SP_heatmap",
+      "uiStateJSON":"{\n  \"vis\": {\n    \"defaultColors\": {\n      \"0 - 12\": \"rgb(247,252,245)\",\n      \"12 - 23\": \"rgb(199,233,192)\",\n      \"23 - 34\": \"rgb(116,196,118)\",\n      \"34 - 45\": \"rgb(35,139,69)\"\n    }\n  }\n}",
+      "version":1,
+      "visState":"{\n  \"title\": \" IdP_SP_heatmap\",\n  \"type\": \"heatmap\",\n  \"params\": {\n    \"type\": \"heatmap\",\n    \"addTooltip\": true,\n    \"addLegend\": true,\n    \"enableHover\": false,\n    \"legendPosition\": \"right\",\n    \"times\": [],\n    \"colorsNumber\": 4,\n    \"colorSchema\": \"Greens\",\n    \"setColorRange\": false,\n    \"colorsRange\": [],\n    \"invertColors\": false,\n    \"percentageMode\": false,\n    \"valueAxes\": [\n      {\n        \"show\": false,\n        \"id\": \"ValueAxis-1\",\n        \"type\": \"value\",\n        \"scale\": {\n          \"type\": \"linear\",\n          \"defaultYExtents\": false\n        },\n        \"labels\": {\n          \"show\": false,\n          \"rotate\": 0,\n          \"overwriteColor\": false,\n          \"color\": \"black\"\n        }\n      }\n    ],\n    \"dimensions\": {\n      \"x\": null,\n      \"y\": [\n        {\n          \"accessor\": 0,\n          \"format\": {\n            \"id\": \"number\"\n          },\n          \"params\": {},\n          \"aggType\": \"count\"\n        }\n      ]\n    }\n  },\n  \"aggs\": [\n    {\n      \"id\": \"1\",\n      \"enabled\": true,\n      \"type\": \"count\",\n      \"schema\": \"metric\",\n      \"params\": {\n        \"customLabel\": \"Total logons\"\n      }\n    },\n    {\n      \"id\": \"2\",\n      \"enabled\": true,\n      \"type\": \"terms\",\n      \"schema\": \"group\",\n      \"params\": {\n        \"field\": \"RP_uri_domain.keyword\",\n        \"orderBy\": \"1\",\n        \"order\": \"desc\",\n        \"size\": 24,\n        \"otherBucket\": true,\n        \"otherBucketLabel\": \"Other\",\n        \"missingBucket\": false,\n        \"missingBucketLabel\": \"Missing\",\n        \"customLabel\": \"SP\"\n      }\n    },\n    {\n      \"id\": \"3\",\n      \"enabled\": true,\n      \"type\": \"terms\",\n      \"schema\": \"segment\",\n      \"params\": {\n        \"field\": \"AP_uri_domain.keyword\",\n        \"orderBy\": \"1\",\n        \"order\": \"desc\",\n        \"size\": 50,\n        \"otherBucket\": false,\n        \"otherBucketLabel\": \"Other\",\n        \"missingBucket\": false,\n        \"missingBucketLabel\": \"Missing\",\n        \"customLabel\": \"IdP\"\n      }\n    }\n  ]\n}"
+   },
+   "id":"802c6280-c006-11e9-9645-2b2282eeab33",
+   "migrationVersion":{
+      "visualization":"7.4.2"
+   },
+   "references":[
+      {
+         "id":"f8876af0-5dcb-11ea-925f-8d97126eb154",
+         "name":"kibanaSavedObjectMeta.searchSourceJSON.index",
+         "type":"index-pattern"
+      }
+   ],
+   "type":"visualization",
+   "updated_at":"2020-03-04T03:57:28.802Z",
+   "version":"WzM5NCw2XQ=="
+}{
+   "attributes":{
+      "description":"",
+      "kibanaSavedObjectMeta":{
+         "searchSourceJSON":"{\n  \"query\": {\n    \"query\": \"\",\n    \"language\": \"kuery\"\n  },\n  \"filter\": [],\n  \"indexRefName\": \"kibanaSavedObjectMeta.searchSourceJSON.index\"\n}"
+      },
+      "title":" IdP_SP_heatmap_countries ",
+      "uiStateJSON":"{\n  \"vis\": {\n    \"defaultColors\": {\n      \"0 - 3,000\": \"rgb(247,252,245)\",\n      \"3,000 - 6,000\": \"rgb(199,233,192)\",\n      \"6,000 - 9,000\": \"rgb(116,196,118)\",\n      \"9,000 - 12,000\": \"rgb(35,139,69)\"\n    }\n  }\n}",
+      "version":1,
+      "visState":"{\n  \"title\": \" IdP_SP_heatmap_countries \",\n  \"type\": \"heatmap\",\n  \"params\": {\n    \"type\": \"heatmap\",\n    \"addTooltip\": true,\n    \"addLegend\": true,\n    \"enableHover\": false,\n    \"legendPosition\": \"right\",\n    \"times\": [],\n    \"colorsNumber\": 4,\n    \"colorSchema\": \"Greens\",\n    \"setColorRange\": false,\n    \"colorsRange\": [],\n    \"invertColors\": false,\n    \"percentageMode\": false,\n    \"valueAxes\": [\n      {\n        \"show\": false,\n        \"id\": \"ValueAxis-1\",\n        \"type\": \"value\",\n        \"scale\": {\n          \"type\": \"linear\",\n          \"defaultYExtents\": false\n        },\n        \"labels\": {\n          \"show\": false,\n          \"rotate\": 0,\n          \"overwriteColor\": false,\n          \"color\": \"black\"\n        }\n      }\n    ],\n    \"dimensions\": {\n      \"x\": {\n        \"accessor\": 0,\n        \"format\": {\n          \"id\": \"string\"\n        },\n        \"params\": {},\n        \"aggType\": \"significant_terms\"\n      },\n      \"y\": [\n        {\n          \"accessor\": 1,\n          \"format\": {\n            \"id\": \"number\"\n          },\n          \"params\": {},\n          \"aggType\": \"count\"\n        }\n      ]\n    }\n  },\n  \"aggs\": [\n    {\n      \"id\": \"1\",\n      \"enabled\": true,\n      \"type\": \"count\",\n      \"schema\": \"metric\",\n      \"params\": {\n        \"customLabel\": \"Total logons\"\n      }\n    },\n    {\n      \"id\": \"2\",\n      \"enabled\": true,\n      \"type\": \"significant_terms\",\n      \"schema\": \"segment\",\n      \"params\": {\n        \"field\": \"AP_geoip.country_code2.keyword\",\n        \"size\": 20,\n        \"customLabel\": \"IdP Country\"\n      }\n    },\n    {\n      \"id\": \"3\",\n      \"enabled\": true,\n      \"type\": \"significant_terms\",\n      \"schema\": \"group\",\n      \"params\": {\n        \"field\": \"RP_geoip.country_code2.keyword\",\n        \"size\": 20,\n        \"customLabel\": \"SP country\"\n      }\n    }\n  ]\n}"
+   },
+   "id":"23682cb0-c005-11e9-9645-2b2282eeab33",
+   "migrationVersion":{
+      "visualization":"7.4.2"
+   },
+   "references":[
+      {
+         "id":"f8876af0-5dcb-11ea-925f-8d97126eb154",
+         "name":"kibanaSavedObjectMeta.searchSourceJSON.index",
+         "type":"index-pattern"
+      }
+   ],
+   "type":"visualization",
+   "updated_at":"2020-03-04T03:56:51.980Z",
+   "version":"WzM5Myw2XQ=="
+}{
+   "attributes":{
+      "description":"",
+      "kibanaSavedObjectMeta":{
+         "searchSourceJSON":"{\n  \"query\": {\n    \"query\": \"\",\n    \"language\": \"kuery\"\n  },\n  \"filter\": [],\n  \"indexRefName\": \"kibanaSavedObjectMeta.searchSourceJSON.index\"\n}"
+      },
+      "title":"AP_map",
+      "uiStateJSON":"{\n  \"mapZoom\": 2,\n  \"mapCenter\": [\n    54.16243396806781,\n    22.32421875\n  ]\n}",
+      "version":1,
+      "visState":"{\n  \"title\": \"AP_map\",\n  \"type\": \"tile_map\",\n  \"params\": {\n    \"colorSchema\": \"Yellow to Red\",\n    \"mapType\": \"Scaled Circle Markers\",\n    \"isDesaturated\": true,\n    \"addTooltip\": true,\n    \"heatClusterSize\": 1.5,\n    \"legendPosition\": \"bottomright\",\n    \"mapZoom\": 2,\n    \"mapCenter\": [\n      0,\n      0\n    ],\n    \"wms\": {\n      \"enabled\": false,\n      \"options\": {\n        \"format\": \"image/png\",\n        \"transparent\": true\n      }\n    },\n    \"dimensions\": {\n      \"metric\": {\n        \"accessor\": 0,\n        \"format\": {\n          \"id\": \"number\"\n        },\n        \"params\": {},\n        \"aggType\": \"count\"\n      },\n      \"geohash\": null,\n      \"geocentroid\": null\n    }\n  },\n  \"aggs\": [\n    {\n      \"id\": \"1\",\n      \"enabled\": true,\n      \"type\": \"count\",\n      \"schema\": \"metric\",\n      \"params\": {}\n    },\n    {\n      \"id\": \"2\",\n      \"enabled\": true,\n      \"type\": \"geohash_grid\",\n      \"schema\": \"segment\",\n      \"params\": {\n        \"field\": \"AP_geoip.location\",\n        \"autoPrecision\": true,\n        \"precision\": 2,\n        \"useGeocentroid\": true,\n        \"isFilteredByCollar\": true,\n        \"mapZoom\": 2,\n        \"mapCenter\": [\n          0,\n          0\n        ]\n      }\n    }\n  ]\n}"
+   },
+   "id":"5c1cf750-c282-11e9-9645-2b2282eeab33",
+   "migrationVersion":{
+      "visualization":"7.4.2"
+   },
+   "references":[
+      {
+         "id":"f8876af0-5dcb-11ea-925f-8d97126eb154",
+         "name":"kibanaSavedObjectMeta.searchSourceJSON.index",
+         "type":"index-pattern"
+      }
+   ],
+   "type":"visualization",
+   "updated_at":"2020-03-04T03:56:03.710Z",
+   "version":"WzM5Miw2XQ=="
+}{
+   "attributes":{
+      "description":"",
+      "kibanaSavedObjectMeta":{
+         "searchSourceJSON":"{\n  \"query\": {\n    \"query\": \"\",\n    \"language\": \"kuery\"\n  },\n  \"filter\": [],\n  \"indexRefName\": \"kibanaSavedObjectMeta.searchSourceJSON.index\"\n}"
+      },
+      "title":"IdP_SP_heatmap",
+      "uiStateJSON":"{\n  \"vis\": {\n    \"defaultColors\": {\n      \"0 - 40\": \"rgb(247,252,245)\",\n      \"40 - 80\": \"rgb(199,233,192)\",\n      \"80 - 120\": \"rgb(116,196,118)\",\n      \"120 - 160\": \"rgb(35,139,69)\"\n    }\n  }\n}",
+      "version":1,
+      "visState":"{\n  \"title\": \"IdP_SP_heatmap\",\n  \"type\": \"heatmap\",\n  \"params\": {\n    \"type\": \"heatmap\",\n    \"addTooltip\": true,\n    \"addLegend\": true,\n    \"enableHover\": false,\n    \"legendPosition\": \"right\",\n    \"times\": [],\n    \"colorsNumber\": 4,\n    \"colorSchema\": \"Greens\",\n    \"setColorRange\": false,\n    \"colorsRange\": [],\n    \"invertColors\": false,\n    \"percentageMode\": false,\n    \"valueAxes\": [\n      {\n        \"show\": false,\n        \"id\": \"ValueAxis-1\",\n        \"type\": \"value\",\n        \"scale\": {\n          \"type\": \"linear\",\n          \"defaultYExtents\": false\n        },\n        \"labels\": {\n          \"show\": false,\n          \"rotate\": 0,\n          \"overwriteColor\": false,\n          \"color\": \"black\"\n        }\n      }\n    ],\n    \"dimensions\": {\n      \"x\": {\n        \"accessor\": 1,\n        \"format\": {\n          \"id\": \"terms\",\n          \"params\": {\n            \"id\": \"string\",\n            \"otherBucketLabel\": \"Other\",\n            \"missingBucketLabel\": \"Missing\"\n          }\n        },\n        \"params\": {},\n        \"aggType\": \"terms\"\n      },\n      \"y\": [\n        {\n          \"accessor\": 2,\n          \"format\": {\n            \"id\": \"number\"\n          },\n          \"params\": {},\n          \"aggType\": \"count\"\n        }\n      ],\n      \"series\": [\n        {\n          \"accessor\": 0,\n          \"format\": {\n            \"id\": \"terms\",\n            \"params\": {\n              \"id\": \"string\",\n              \"otherBucketLabel\": \"Other\",\n              \"missingBucketLabel\": \"Missing\"\n            }\n          },\n          \"params\": {},\n          \"aggType\": \"terms\"\n        }\n      ]\n    }\n  },\n  \"aggs\": [\n    {\n      \"id\": \"1\",\n      \"enabled\": true,\n      \"type\": \"count\",\n      \"schema\": \"metric\",\n      \"params\": {\n        \"customLabel\": \"Total logons\"\n      }\n    },\n    {\n      \"id\": \"2\",\n      \"enabled\": true,\n      \"type\": \"terms\",\n      \"schema\": \"group\",\n      \"params\": {\n        \"field\": \"RP_uri_domain.keyword\",\n        \"orderBy\": \"1\",\n        \"order\": \"desc\",\n        \"size\": 24,\n        \"otherBucket\": true,\n        \"otherBucketLabel\": \"Other\",\n        \"missingBucket\": false,\n        \"missingBucketLabel\": \"Missing\",\n        \"customLabel\": \"SP\"\n      }\n    },\n    {\n      \"id\": \"3\",\n      \"enabled\": true,\n      \"type\": \"terms\",\n      \"schema\": \"segment\",\n      \"params\": {\n        \"field\": \"AP_uri_domain.keyword\",\n        \"orderBy\": \"1\",\n        \"order\": \"desc\",\n        \"size\": 50,\n        \"otherBucket\": false,\n        \"otherBucketLabel\": \"Other\",\n        \"missingBucket\": false,\n        \"missingBucketLabel\": \"Missing\",\n        \"customLabel\": \"IdP\"\n      }\n    }\n  ]\n}"
+   },
+   "id":"919339c0-c283-11e9-9645-2b2282eeab33",
+   "migrationVersion":{
+      "visualization":"7.4.2"
+   },
+   "references":[
+      {
+         "id":"f8876af0-5dcb-11ea-925f-8d97126eb154",
+         "name":"kibanaSavedObjectMeta.searchSourceJSON.index",
+         "type":"index-pattern"
+      }
+   ],
+   "type":"visualization",
+   "updated_at":"2020-03-04T04:00:30.040Z",
+   "version":"WzQwMSw2XQ=="
+}{
+   "attributes":{
+      "description":"",
+      "kibanaSavedObjectMeta":{
+         "searchSourceJSON":"{\n  \"query\": {\n    \"query\": \"\",\n    \"language\": \"kuery\"\n  },\n  \"filter\": [],\n  \"indexRefName\": \"kibanaSavedObjectMeta.searchSourceJSON.index\"\n}"
+      },
+      "title":" Total logons",
+      "uiStateJSON":"{}",
+      "version":1,
+      "visState":"{\n  \"title\": \" Total logons\",\n  \"type\": \"histogram\",\n  \"params\": {\n    \"type\": \"histogram\",\n    \"grid\": {\n      \"categoryLines\": false\n    },\n    \"categoryAxes\": [\n      {\n        \"id\": \"CategoryAxis-1\",\n        \"type\": \"category\",\n        \"position\": \"bottom\",\n        \"show\": true,\n        \"style\": {},\n        \"scale\": {\n          \"type\": \"linear\"\n        },\n        \"labels\": {\n          \"show\": true,\n          \"filter\": true,\n          \"truncate\": 100\n        },\n        \"title\": {}\n      }\n    ],\n    \"valueAxes\": [\n      {\n        \"id\": \"ValueAxis-1\",\n        \"name\": \"LeftAxis-1\",\n        \"type\": \"value\",\n        \"position\": \"left\",\n        \"show\": true,\n        \"style\": {},\n        \"scale\": {\n          \"type\": \"linear\",\n          \"mode\": \"normal\"\n        },\n        \"labels\": {\n          \"show\": true,\n          \"rotate\": 0,\n          \"filter\": false,\n          \"truncate\": 100\n        },\n        \"title\": {\n          \"text\": \"Total logons\"\n        }\n      }\n    ],\n    \"seriesParams\": [\n      {\n        \"show\": \"true\",\n        \"type\": \"histogram\",\n        \"mode\": \"stacked\",\n        \"data\": {\n          \"label\": \"Total logons\",\n          \"id\": \"1\"\n        },\n        \"valueAxis\": \"ValueAxis-1\",\n        \"drawLinesBetweenPoints\": true,\n        \"showCircles\": true\n      }\n    ],\n    \"addTooltip\": true,\n    \"addLegend\": true,\n    \"legendPosition\": \"right\",\n    \"times\": [],\n    \"addTimeMarker\": false,\n    \"labels\": {\n      \"show\": false\n    },\n    \"dimensions\": {\n      \"x\": {\n        \"accessor\": 0,\n        \"format\": {\n          \"id\": \"date\",\n          \"params\": {\n            \"pattern\": \"HH:mm:ss\"\n          }\n        },\n        \"params\": {\n          \"date\": true,\n          \"interval\": \"PT30S\",\n          \"format\": \"HH:mm:ss\",\n          \"bounds\": {\n            \"min\": \"2019-08-19T12:56:20.340Z\",\n            \"max\": \"2019-08-19T13:11:20.340Z\"\n          }\n        },\n        \"aggType\": \"date_histogram\"\n      },\n      \"y\": [\n        {\n          \"accessor\": 1,\n          \"format\": {\n            \"id\": \"number\"\n          },\n          \"params\": {},\n          \"aggType\": \"count\"\n        }\n      ]\n    }\n  },\n  \"aggs\": [\n    {\n      \"id\": \"1\",\n      \"enabled\": true,\n      \"type\": \"count\",\n      \"schema\": \"metric\",\n      \"params\": {\n        \"customLabel\": \"Total logons\"\n      }\n    },\n    {\n      \"id\": \"2\",\n      \"enabled\": true,\n      \"type\": \"date_histogram\",\n      \"schema\": \"segment\",\n      \"params\": {\n        \"field\": \"@timestamp\",\n        \"timeRange\": {\n          \"from\": \"now-15m\",\n          \"to\": \"now\"\n        },\n        \"useNormalizedEsInterval\": true,\n        \"interval\": \"auto\",\n        \"drop_partials\": false,\n        \"min_doc_count\": 1,\n        \"extended_bounds\": {}\n      }\n    }\n  ]\n}"
+   },
+   "id":"db0314a0-c282-11e9-9645-2b2282eeab33",
+   "migrationVersion":{
+      "visualization":"7.4.2"
+   },
+   "references":[
+      {
+         "id":"f8876af0-5dcb-11ea-925f-8d97126eb154",
+         "name":"kibanaSavedObjectMeta.searchSourceJSON.index",
+         "type":"index-pattern"
+      }
+   ],
+   "type":"visualization",
+   "updated_at":"2020-03-04T04:00:44.748Z",
+   "version":"WzQwMiw2XQ=="
+}{
+   "attributes":{
+      "description":"",
+      "kibanaSavedObjectMeta":{
+         "searchSourceJSON":"{\n  \"query\": {\n    \"query\": \"\",\n    \"language\": \"kuery\"\n  },\n  \"filter\": [],\n  \"indexRefName\": \"kibanaSavedObjectMeta.searchSourceJSON.index\"\n}"
+      },
+      "title":"IdP_SP_heatmap_countries",
+      "uiStateJSON":"{\n  \"vis\": {\n    \"defaultColors\": {\n      \"0 - 600\": \"rgb(247,252,245)\",\n      \"600 - 1,200\": \"rgb(199,233,192)\",\n      \"1,200 - 1,800\": \"rgb(116,196,118)\",\n      \"1,800 - 2,400\": \"rgb(35,139,69)\"\n    }\n  }\n}",
+      "version":1,
+      "visState":"{\n  \"title\": \"IdP_SP_heatmap_countries\",\n  \"type\": \"heatmap\",\n  \"params\": {\n    \"type\": \"heatmap\",\n    \"addTooltip\": true,\n    \"addLegend\": true,\n    \"enableHover\": false,\n    \"legendPosition\": \"right\",\n    \"times\": [],\n    \"colorsNumber\": 4,\n    \"colorSchema\": \"Greens\",\n    \"setColorRange\": false,\n    \"colorsRange\": [],\n    \"invertColors\": false,\n    \"percentageMode\": false,\n    \"valueAxes\": [\n      {\n        \"show\": false,\n        \"id\": \"ValueAxis-1\",\n        \"type\": \"value\",\n        \"scale\": {\n          \"type\": \"linear\",\n          \"defaultYExtents\": false\n        },\n        \"labels\": {\n          \"show\": false,\n          \"rotate\": 0,\n          \"overwriteColor\": false,\n          \"color\": \"black\"\n        }\n      }\n    ],\n    \"dimensions\": {\n      \"x\": null,\n      \"y\": [\n        {\n          \"accessor\": 0,\n          \"format\": {\n            \"id\": \"number\"\n          },\n          \"params\": {},\n          \"aggType\": \"count\"\n        }\n      ]\n    }\n  },\n  \"aggs\": [\n    {\n      \"id\": \"1\",\n      \"enabled\": true,\n      \"type\": \"count\",\n      \"schema\": \"metric\",\n      \"params\": {\n        \"customLabel\": \"Total logons\"\n      }\n    },\n    {\n      \"id\": \"2\",\n      \"enabled\": true,\n      \"type\": \"significant_terms\",\n      \"schema\": \"segment\",\n      \"params\": {\n        \"field\": \"AP_geoip.country_code2.keyword\",\n        \"size\": 20,\n        \"customLabel\": \"IdP country\"\n      }\n    },\n    {\n      \"id\": \"3\",\n      \"enabled\": true,\n      \"type\": \"significant_terms\",\n      \"schema\": \"group\",\n      \"params\": {\n        \"field\": \"RP_geoip.country_code2.keyword\",\n        \"size\": 20,\n        \"customLabel\": \"SP country\"\n      }\n    }\n  ]\n}"
+   },
+   "id":"4cd23660-c283-11e9-9645-2b2282eeab33",
+   "migrationVersion":{
+      "visualization":"7.4.2"
+   },
+   "references":[
+      {
+         "id":"f8876af0-5dcb-11ea-925f-8d97126eb154",
+         "name":"kibanaSavedObjectMeta.searchSourceJSON.index",
+         "type":"index-pattern"
+      }
+   ],
+   "type":"visualization",
+   "updated_at":"2020-03-04T03:58:48.835Z",
+   "version":"WzM5Nyw2XQ=="
+}{
+   "attributes":{
+      "description":"",
+      "kibanaSavedObjectMeta":{
+         "searchSourceJSON":"{\n  \"query\": {\n    \"query\": \"\",\n    \"language\": \"kuery\"\n  },\n  \"filter\": [],\n  \"indexRefName\": \"kibanaSavedObjectMeta.searchSourceJSON.index\"\n}"
+      },
+      "title":"RP_map",
+      "uiStateJSON":"{\n  \"mapZoom\": 2,\n  \"mapCenter\": [\n    49.38237278700955,\n    44.47265625000001\n  ]\n}",
+      "version":1,
+      "visState":"{\n  \"title\": \"RP_map\",\n  \"type\": \"tile_map\",\n  \"params\": {\n    \"colorSchema\": \"Yellow to Red\",\n    \"mapType\": \"Scaled Circle Markers\",\n    \"isDesaturated\": true,\n    \"addTooltip\": true,\n    \"heatClusterSize\": 1.5,\n    \"legendPosition\": \"bottomright\",\n    \"mapZoom\": 2,\n    \"mapCenter\": [\n      0,\n      0\n    ],\n    \"wms\": {\n      \"enabled\": false,\n      \"options\": {\n        \"format\": \"image/png\",\n        \"transparent\": true\n      }\n    },\n    \"dimensions\": {\n      \"metric\": {\n        \"accessor\": 0,\n        \"format\": {\n          \"id\": \"number\"\n        },\n        \"params\": {},\n        \"aggType\": \"count\"\n      },\n      \"geohash\": null,\n      \"geocentroid\": null\n    }\n  },\n  \"aggs\": [\n    {\n      \"id\": \"1\",\n      \"enabled\": true,\n      \"type\": \"count\",\n      \"schema\": \"metric\",\n      \"params\": {}\n    },\n    {\n      \"id\": \"2\",\n      \"enabled\": true,\n      \"type\": \"geohash_grid\",\n      \"schema\": \"segment\",\n      \"params\": {\n        \"field\": \"RP_geoip.location\",\n        \"autoPrecision\": true,\n        \"precision\": 2,\n        \"useGeocentroid\": true,\n        \"isFilteredByCollar\": true,\n        \"mapZoom\": 2,\n        \"mapCenter\": [\n          0,\n          0\n        ]\n      }\n    }\n  ]\n}"
+   },
+   "id":"3757d1b0-c282-11e9-9645-2b2282eeab33",
+   "migrationVersion":{
+      "visualization":"7.4.2"
+   },
+   "references":[
+      {
+         "id":"f8876af0-5dcb-11ea-925f-8d97126eb154",
+         "name":"kibanaSavedObjectMeta.searchSourceJSON.index",
+         "type":"index-pattern"
+      }
+   ],
+   "type":"visualization",
+   "updated_at":"2020-03-04T03:59:02.058Z",
+   "version":"WzM5OCw2XQ=="
+}{
+   "exportedCount":9,
+   "missingRefCount":0,
+   "missingReferences":[
+
+   ]
+}
+]

@@ -1,0 +1,8 @@
+output {
+    syslog {
+      host => "{{ fticks_central_server }}"
+      message => "%{syslog_message}"
+      codec => "plain"
+      port => 514
+    }
+}

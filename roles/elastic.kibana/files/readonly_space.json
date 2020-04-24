@@ -1,0 +1,19 @@
+{
+  "id" : "readonly",
+  "name" : "Read only",
+  "disabledFeatures" : [
+    "dev_tools",
+    "advancedSettings",
+    "monitoring",
+    "apm",
+    "ml",
+    "canvas",
+    "infrastructure",
+    "logs",
+    "siem",
+    "uptime",
+    "maps",
+    "graph",
+    "timelion"
+  ]
+}

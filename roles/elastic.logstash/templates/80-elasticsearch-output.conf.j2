@@ -1,0 +1,9 @@
+output {
+    elasticsearch {
+      id => "fticks-elasic"
+      hosts => [ {{es_hosts}} ]
+      index => "fticks_edugain-%{+YYYY.MM}"
+      user => "{{ es_logstash_fticks_user }}"
+      password => "{{ es_logstash_fticks_password }}"
+    }
+}

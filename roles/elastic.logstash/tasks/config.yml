@@ -1,0 +1,66 @@
+---
+- name: Create Logstash configuration files.
+  become: yes
+  copy:
+    src: "{{ item }}"
+    dest: "/etc/logstash/conf.d/{{ item }}"
+    owner: root
+    group: root
+    mode: 0644
+  with_items:
+    - 10-syslog-fticks-input.conf
+    - 50-fticks-parse.conf
+  notify: restart logstash
+
+- name: Create Logstash configuration files from templates.
+  become: yes
+  template:
+    src: "{{ item }}.j2"
+    dest: "/etc/logstash/conf.d/{{ item }}"
+    owner: root
+    group: root
+    mode: 0644
+  with_items:
+    - 80-elasticsearch-output.conf
+    - 90-syslog-fticks-central.conf
+  notify: restart logstash
+
+- name: Create Logstash configuration file for local syslog.
+  become: yes
+  template:
+    src: 02-local-syslog-input.conf.j2
+    dest: /etc/logstash/conf.d/02-local-syslog-input.conf
+    owner: root
+    group: root
+    mode: 0644
+  when: logstash_monitor_local_syslog
+  notify: restart logstash
+
+- name: Ensure configuration for local syslog is absent if disabled.
+  become: yes
+  file:
+    path: /etc/logstash/conf.d/02-local-syslog-input.conf
+    state: absent
+  when: not logstash_monitor_local_syslog
+  notify: restart logstash
+
+- name: Create fticks elasticsearch role
+  uri:
+    url: http://{{es_config_hosts}}:9200/_security/role/{{es_logstash_fticks_role}}
+    method: PUT
+    url_username: "{{es_api_basic_auth_username}}"
+    url_password: "{{es_api_basic_auth_password}}"
+    force_basic_auth: yes
+    body_format: json
+    body: "{{ lookup('template','fticks_role.json.j2') }}"
+
+- name: Create fticks elasticsearch user
+  uri:
+    url: http://{{es_config_hosts}}:9200/_security/user/{{es_logstash_fticks_user}}
+    method: PUT
+    url_username: "{{es_api_basic_auth_username}}"
+    url_password: "{{es_api_basic_auth_password}}"
+    force_basic_auth: yes
+    body_format: json
+    body: "{{ lookup('template','fticks_user.json.j2') }}"
+

@@ -1,0 +1,27 @@
+{
+  "metadata" : {
+    "version" : 1
+  },
+  "elasticsearch" : {
+    "cluster" : [
+      "manage_index_templates",
+      "monitor",
+      "manage_ilm"
+    ],
+    "indices" : [
+      {
+        "names" : [
+          "fticks_edugain-*",
+        ],
+        "privileges" : [
+          "write",
+          "delete",
+          "create_index",
+          "manage",
+          "manage_ilm"
+        ],
+        "allow_restricted_indices" : false
+      }
+    ]
+  }
+}

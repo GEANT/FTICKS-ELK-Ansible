@@ -1,0 +1,85 @@
+{
+    "index_patterns" : [
+      "fticks_edugain*"
+    ],
+    "settings" : {
+      "index" : {
+        "number_of_shards" : "1",
+        "refresh_interval" : "5s"
+      }
+    },
+    "mappings" : {
+      "dynamic_templates" : [
+        {
+          "message_field" : {
+            "path_match" : "message",
+            "mapping" : {
+              "norms" : false,
+              "type" : "text"
+            },
+            "match_mapping_type" : "string"
+          }
+        },
+        {
+          "string_fields" : {
+            "mapping" : {
+              "norms" : false,
+              "type" : "text",
+              "fields" : {
+                "keyword" : {
+                  "ignore_above" : 256,
+                  "type" : "keyword"
+                }
+              }
+            },
+            "match_mapping_type" : "string",
+            "match" : "*"
+          }
+        }
+      ],
+      "properties" : {
+        "@timestamp" : {
+          "type" : "date"
+        },
+        "@version" : {
+          "type" : "keyword"
+        },
+        "RP_geoip" : {
+          "dynamic" : true,
+          "properties" : {
+            "ip" : {
+              "type" : "ip"
+            },
+            "latitude" : {
+              "type" : "half_float"
+            },
+            "location" : {
+              "type" : "geo_point"
+            },
+            "longitude" : {
+              "type" : "half_float"
+            }
+          }
+        },
+        "AP_geoip" : {
+          "dynamic" : true,
+          "properties" : {
+            "ip" : {
+              "type" : "ip"
+            },
+            "latitude" : {
+              "type" : "half_float"
+            },
+            "location" : {
+              "type" : "geo_point"
+            },
+            "longitude" : {
+              "type" : "half_float"
+            }
+          }
+        }
+      }
+    },
+    "aliases" : { }
+  }
+}
