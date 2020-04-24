@@ -1,0 +1,20 @@
+logstash_version: "7.x"
+
+logstash_install_plugins:
+  - logstash-input-syslog
+  - logstash-output-syslog
+
+# CHANGE ME 
+es_hosts: '"<node_0_IP>:9200","<node_1_IP>:9200","<node_2_IP>:9200"'
+
+# CHANGE ME
+es_config_hosts: <node_0_IP>
+
+es_logstash_fticks_user: fticks
+
+# CHANGE ME
+es_logstash_fticks_password: D4d313fr
+
+es_logstash_fticks_role: fticks
+
+fticks_central_server: "194.149.138.20"

@@ -1,0 +1,19 @@
+kibana_version: "7.x"
+
+kibana_server_host: "127.0.0.1"
+
+# CHANGE ME
+kibana_server_name: fticks.feredeation.local
+
+# Restricted user for kibana 
+kibana_nginx_user: readonly_user
+
+# CHANGE ME
+kibana_nginx_pass: C23c3rn0324-0md3
+
+# CHANGE ME
+# Use 'echo -n "user:pass" | base64'
+kibana_nginx_user_pass: cmVhZG9ubHlfdXNlcjpDMjNjM3JuMDMyNC0wbWQz
+
+kibana_readonly_role: "readonly"
+kibana_readonly_space: "readonly"

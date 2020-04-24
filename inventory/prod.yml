@@ -1,0 +1,22 @@
+all:
+  children:
+    elasticsearch:
+      hosts:
+        node_0:
+#          ansible_host: <IP>
+        node_1:
+#          ansible_host: <IP>
+        node_2:
+#          ansible_host: <IP>
+        node_3:
+#          ansible_host: <IP>
+      vars:
+        ansible_python_interpreter: "/usr/bin/python3"
+    logstash:
+      hosts:
+        node_4:
+#          ansible_host: <IP>
+    kibana:
+      hosts:
+        node_5:
+#          ansible_host: <IP>

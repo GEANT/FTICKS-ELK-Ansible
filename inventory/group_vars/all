@@ -1,0 +1,8 @@
+es_version: 7.6.2
+es_api_basic_auth_username: elastic
+
+# CHANGE ME
+es_api_basic_auth_password: D23eV#F4d
+
+# CHANGE ME to first node in Elastic cluster
+es_api_config_node: <IP of node_0>

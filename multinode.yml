@@ -1,0 +1,77 @@
+- hosts: node_0
+  roles:
+    - role: elastic.elasticsearch
+      tags: 
+      - elasticsearch
+    - role: elastic.logstash
+      tags:
+      - logstash
+  vars:
+    es_config:
+      node.name: master_node
+      node.data: true
+      node.master: true
+      cluster.name: "test-cluster"
+      cluster.initial_master_nodes: "194.149.135.61:9300,194.149.135.107:9300,194.149.135.120:9300"
+      discovery.seed_hosts: "194.149.135.61:9300,194.149.135.107:9300,194.149.135.120:9300,194.149.135.37:9300"
+      http.host: 0.0.0.0
+      network.host: 0.0.0.0
+      http.port: 9200
+      bootstrap.memory_lock: false
+- hosts: node_0
+  roles:
+- hosts: node_1
+  roles:
+    - role: elastic.elasticsearch
+      tags: 
+      - elasticsearch
+  vars:
+    es_config:
+      node.name: data_node_1
+      node.data: true
+      node.master: true
+      cluster.name: "test-cluster"
+      cluster.initial_master_nodes: "194.149.135.61:9300,194.149.135.107:9300,194.149.135.120:9300"
+      discovery.seed_hosts: "194.149.135.61:9300,194.149.135.107:9300,194.149.135.120:9300,194.149.135.37:9300"
+      http.host: 0.0.0.0
+      network.host: 0.0.0.0
+      http.port: 9200
+      bootstrap.memory_lock: false
+- hosts: node_2
+  roles:
+    - role: elastic.elasticsearch
+      tags: 
+      - elasticsearch
+  vars:
+    es_config:
+      node.name: data_node_2
+      node.data: true
+      node.master: true
+      cluster.name: "test-cluster"
+      cluster.initial_master_nodes: "194.149.135.61:9300,194.149.135.107:9300,194.149.135.120:9300"
+      discovery.seed_hosts: "194.149.135.61:9300,194.149.135.107:9300,194.149.135.120:9300,194.149.135.37:9300"
+      http.host: 0.0.0.0
+      network.host: 0.0.0.0
+      http.port: 9200
+      bootstrap.memory_lock: false
+- hosts: node_3
+  roles:
+    - role: elastic.elasticsearch
+      tags:
+      - elasticsearch
+    - role: elastic.kibana
+      tags: 
+      - kibana
+  vars:
+    es_config:
+      node.name: data_node_3
+      node.data: false
+      node.master: false
+      cluster.name: "test-cluster"
+      cluster.initial_master_nodes: "194.149.135.61:9300,194.149.135.107:9300,194.149.135.120:9300"
+      discovery.seed_hosts: "194.149.135.61:9300,194.149.135.107:9300,194.149.135.120:9300,194.149.135.37:9300"
+      http.host: 0.0.0.0
+      network.host: 0.0.0.0
+      http.port: 9200
+      bootstrap.memory_lock: false
+

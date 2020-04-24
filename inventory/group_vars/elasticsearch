@@ -1,0 +1,21 @@
+# If you do not want to use default location 
+#es_data_dirs:
+#  - "/opt/elasticsearch/data"
+#es_log_dir: "/opt/elasticsearch/logs"
+
+# Increase this
+es_heap_size: "1g"
+
+es_plugins: []
+es_enable_xpack: true
+es_xpack_features: []
+es_xpack_trial: false
+es_enable_auto_ssl_configuration: true
+es_enable_transport_ssl: true
+
+# Create your own keystore and CA
+es_ssl_keystore: "~/geant/my-keystore.p12"
+es_ssl_keystore_password: ""
+es_ssl_truststore: "~/geant/my-ca.p12"
+es_ssl_truststore_password: ""
+es_validate_certs: "no"
